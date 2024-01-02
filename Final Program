@@ -1,0 +1,1617 @@
+using System;
+using System.Text.RegularExpressions;
+namespace Selected
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+        	Console.WriteLine("--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("                                                                 "+"WELCOME TO OUR SELECTED AREAS BOOKING PROGRAM"+"                                                            ");
+            Console.WriteLine("--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine(" ");
+            System.Threading.Thread.Sleep(1000);
+            System.Threading.Thread.Sleep(1000);
+            Console.WriteLine("Good day! To proceed with your booking, we kindly request some information from you.");
+            Console.WriteLine(" ");
+            System.Threading.Thread.Sleep(1000);           
+            Console.Write("Please enter your last name: ");
+            string Lname = Console.ReadLine();
+            System.Threading.Thread.Sleep(1000);
+            Console.Write("Please enter your first name: ");
+            string Fname = Console.ReadLine();
+            System.Threading.Thread.Sleep(1000);
+            Console.Write("Please enter your middle initial: ");
+            string Mname = Console.ReadLine();
+            System.Threading.Thread.Sleep(1000);
+            string Email;
+            do
+            {
+                Email = GetValidEmail("Please enter your email address (Ex: myname@gmail.com): ");
+                if (!IsValidEmail(Email))
+                    Console.WriteLine("Invalid email format. Please enter a valid email address.");
+            } while (!IsValidEmail(Email));
+            System.Threading.Thread.Sleep(1000);
+            Console.Write("Please enter the barangay in which you live: ");
+            string Bar = Console.ReadLine();
+            System.Threading.Thread.Sleep(1000);
+            Console.Write("Please enter the city in which you live: ");
+            string Cty = Console.ReadLine();
+            System.Threading.Thread.Sleep(1000);
+            Console.Write("Please enter the province in which you live: ");
+            string Pro = Console.ReadLine();
+            System.Threading.Thread.Sleep(1000);
+            Console.Write("Please enter your postal code: ");
+            string Pcode = Console.ReadLine();           
+            System.Threading.Thread.Sleep(1000);
+            double num;
+            while (!double.TryParse(GetValidInput("Please enter your phone number: "), out num))
+            {
+                Console.WriteLine("Invalid phone number. Please enter a valid number.");
+            }         
+            System.Threading.Thread.Sleep(1000);
+            int num2;
+            while (!int.TryParse(GetValidInput("Please enter the number of guests: "), out num2) || num2 <= 0)
+            {
+                Console.WriteLine("Invalid input. Please enter a valid number of guests.");
+            }            
+            System.Threading.Thread.Sleep(1000);
+            Console.Write("Please enter your check-in date (MM-DD-YYYY): ");
+            DateTime checkInDate;
+            while (!DateTime.TryParse(Console.ReadLine(), out checkInDate))
+            Console.WriteLine("");
+            System.Threading.Thread.Sleep(1000);
+            Console.Write("Please enter your check-out date (MM-DD-YYYY): ");
+            DateTime checkOutDate;
+            while (!DateTime.TryParse(Console.ReadLine(), out checkOutDate))
+            Console.WriteLine("");
+            Console.WriteLine("");
+
+            
+                       	
+            
+            Console.WriteLine("List of Selected Area. " );
+            Console.WriteLine(" ");
+            string[] yellow = { "1.Batangas", "2.Laguna", "3.Cavite" };
+            
+               int y = 0;
+                while (y < 3)
+                {
+                    Console.WriteLine(yellow[y]);
+                    System.Threading.Thread.Sleep(1000);
+                    y++;
+                }
+
+                System.Threading.Thread.Sleep(500);
+                Console.WriteLine("");
+
+                  
+            Console.Write("Where you wanna go?: ");
+
+            int choices;
+            choices = Convert.ToInt32(Console.ReadLine());
+
+            if (choices == 1)
+            {
+                Console.WriteLine("Batangas");
+                Console.WriteLine("(Tagalog: Lalawigan ng Batangas), (Spanish: Provincia de Batangas), is a first class province of the");
+                Console.WriteLine("Philippines located on the southwestern part of Luzon in the CALABARZON region.");
+                Console.WriteLine("Its capital is Batangas City and it is bordered by the provinces of Cavite and Laguna to the north and Quezon to the east.");
+                Console.WriteLine("Across the Verde Island Passages to the south is the island of Mindoro and to the west lies the South China Sea.");
+                Console.WriteLine("Poetically, Batangas is often referred to by its ancient name Kumintang.");
+                System.Threading.Thread.Sleep(2000);
+                	
+                Console.WriteLine("These are tourist spots according to your choice");
+                Console.WriteLine(" ");
+                string[] black = {
+                    "1.Montemaria Shrine",
+                    "2.Fantasy World",
+                    "3.Taal Volcano",
+                    "4.Caleruega Church",
+                    "5.Mt. Maculot"
+                };
+
+                int b = 0;
+                while (b < 5)
+                {
+                    Console.WriteLine(black[b]);
+                    System.Threading.Thread.Sleep(1000);
+                    b++;
+                }
+
+                System.Threading.Thread.Sleep(500);
+                Console.WriteLine("");
+                Console.Write("So, have you chosen your choice?: ");
+            
+
+
+int locations;
+locations = Convert.ToInt32(Console.ReadLine());
+
+if (locations == 1)
+{
+    Console.WriteLine("Monte Maria");
+    Console.WriteLine("Monte Maria is one of the top Batangas tourist spots because of its uniqueness.");
+    Console.WriteLine("It is meant to be both a religious and tourism site. Although devotees and pilgrims are attracted to it, Monte Maria caters to regular tourists as well.");
+}
+else if (locations == 2)
+{
+    Console.WriteLine("Fantasy World");
+	Console.WriteLine("Fantasy World was meant to be the Philippine version of Disneyland.Fantasy World has never opened as a theme park.");
+	Console.WriteLine("It’s supposed to be the largest and grandest theme park in the country. However, this ambitious project has remained unfinished.");
+	Console.WriteLine("According to local stories and rumors, the Japanese owner had financial problems and, therefore, stopped the construction years ago.");
+}
+else if (locations == 3)
+{
+    Console.WriteLine("Taal Volcano");	
+    Console.WriteLine("Taal Volcano is the most recognizable landmark of Batangas. Standing at only 3 meters above sea level,");
+    Console.WriteLine("it is one of the smallest volcanoes in the world. Aside from its size, Taal stands out because of its unique physical features.");
+}
+else if (locations == 4)
+{
+    Console.WriteLine("Caleruega Church");
+	Console.WriteLine("Caleruega Church is one of the most famous churches in Batangas. This property is perched on the highest hill of Nasugbu Town.");
+    Console.WriteLine("Caleruega is named after a Spanish municipality.");
+}
+else if (locations == 5)
+{
+    Console.WriteLine("Mt. Maculot");	
+	Console.WriteLine("Mt. Maculot is one of the most well-known hiking spots in the Philippines. This mountain stands at 930 meters above sea level.");
+	Console.WriteLine("The hike to the summit is rated 4/9 in difficulty level. Even though some parts of the mountain trail are slippery, steep, and muddy,");
+    Console.WriteLine("a reasonably physically fit person can do the trek.");
+}
+
+Console.WriteLine(" ");
+System.Threading.Thread.Sleep(1000);
+
+	Console.WriteLine(" ");
+	Console.WriteLine("Here is the list of hotels: ");
+    Console.WriteLine(" ");
+	string [] maroon = {
+                    "1.Luks Lofts Hotel & Residences",
+                    "2.Pontefino Hotel",
+                    "3.Meaco Royal Hotel-Batangas City",
+                    "4.Batangas Country Club",
+                    "5.The Alpa Hotel"
+                    	
+    };
+    
+                int m = 0;
+                while (m < 5)
+                {
+                    Console.WriteLine(maroon[m]);
+                    System.Threading.Thread.Sleep(1000);
+                    m++;
+                }
+
+                System.Threading.Thread.Sleep(500);
+                Console.WriteLine("");
+                Console.Write("So, have you chosen your choice?: ");
+int hotels;
+hotels = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine(" ");
+
+if(hotels == 1){
+	Console.WriteLine("Luks Lofts Hotel & Residences");
+	Console.WriteLine("LuksLofts Building, Joseling Road, Batangas, 4200 Batangas");  
+	Console.WriteLine("This modern hotel with a colorful exterior is 3 km from the nearest rail station, a 14-minute walk from the");
+	Console.WriteLine("17th-century Minor Basilica of the Immaculate Conception, and 2 km from the Batangas Floral Garden.Luxe,");
+    Console.WriteLine("bi-level lofts include free minibars and Wi-Fi. All have flat-screen TVs, kitchens and living rooms,");
+    Console.WriteLine("plus jetted indoor pools and saunas; 1 has a billiard table. Amenities include a vibrant cafe with colorful walls, as well as a spa.");    
+    Console.WriteLine("https://lukslofts.com/");   
+    Console.WriteLine(" ");
+    int PRate1=1200;
+    Console.Write("Do you want to book in this hotel? (yes/no): ");
+                string bookHotel1 = Console.ReadLine();
+
+                if (bookHotel1.ToLower() == "yes")
+                {
+                    
+
+                    Console.Write("Enter the number of days you want to stay: ");
+                    int numberOfDays = Convert.ToInt32(Console.ReadLine());
+
+                   
+
+                    int totalCost = 0;
+
+                    Console.WriteLine("Select your room type:");
+                    Console.WriteLine("1. Standard Room");
+                    Console.WriteLine("2. Deluxe Room");
+                    Console.WriteLine("3. Suite");
+                    Console.Write("Enter your choice (1, 2, or 3): ");
+                    int roomPrice = 0;
+                    int roomChoice;
+                    while (!int.TryParse(Console.ReadLine(), out roomChoice) || roomChoice < 1 || roomChoice > 3)
+                 {
+                    Console.WriteLine("Invalid input. Please enter 1, 2, or 3.");
+                    Console.Write("Enter your choice (1, 2, or 3): ");
+                 }
+                    if(roomChoice == 1){
+                    	
+                    	roomPrice = 500;
+                    }
+                    else if(roomChoice == 2){
+                    	      
+                    	roomPrice = 1000;
+                    }
+                    else if(roomChoice == 3){
+                    	      
+                    	roomPrice = 1500;
+       
+                    }
+                  string roomType = GetRoomType(roomChoice);
+
+              
+                    
+                        totalCost = numberOfDays * PRate1 * num2 + roomPrice;
+                   
+                                         
+                      Console.WriteLine("Booking confirmed. ");
+                      Console.WriteLine("");
+                      
+                      Console.WriteLine("================Luks Lofts Hotel & Residences Receipt===================");
+                      Console.WriteLine("Name: " + Lname +" " + Fname + " " + Mname );
+                      Console.WriteLine("Address: " + Bar +"," + Cty + "," + Pro + "," + Pcode );
+                      Console.WriteLine("Email: " + Email );
+                      Console.WriteLine("Contact: " + num );
+                      Console.WriteLine("Check In: " + checkInDate );
+                      Console.WriteLine("Check Out: " + checkOutDate );	
+                      Console.WriteLine("Guest: " + num2 );
+                      Console.WriteLine("Total Days: "+ numberOfDays);
+                      Console.WriteLine("Room Rate per Day: "+PRate1);
+                      Console.WriteLine("Room Type: " + roomType);
+                      Console.WriteLine("========================================================================");
+                      Console.WriteLine("Total Cost: "+totalCost);
+                      Console.WriteLine("========================================================================");
+                      Console.WriteLine("Thank you for considering our services. Have a great day!");
+                     
+                }
+                
+}
+else if(hotels == 2){
+    Console.WriteLine("Pontefino Hotel");
+	Console.WriteLine("Pastor Village, Batangas, 4200 Batangas");  
+    Console.WriteLine("Relaxed rooms with polished wood hints feature free Wi-Fi and flat-screen TVs, plus minifridges, microwaves,");
+    Console.WriteLine("and tea and coffeemaking facilities. The 1-and 2-bedroom suites add kitchenettes, dining tables and balconies;");
+    Console.WriteLine("some are split-level and/or have pool views. Room service is available.");
+	Console.WriteLine("https://www.pontefinohotel.com/en/");
+    Console.WriteLine(" ");
+    int PRate1= 1850;
+    Console.Write("Do you want to book in this hotel? (yes/no): ");
+                string bookHotel1 = Console.ReadLine();
+
+                if (bookHotel1.ToLower() == "yes")
+                {
+                   
+
+                    Console.Write("Enter the number of days you want to stay: ");
+                    int numberOfDays = Convert.ToInt32(Console.ReadLine());
+
+                    
+
+                    int totalCost = 0;
+                    
+                    Console.WriteLine("Select your room type:");
+                    Console.WriteLine("1. Standard Room");
+                    Console.WriteLine("2. Deluxe Room");
+                    Console.WriteLine("3. Suite");
+                    Console.Write("Enter your choice (1, 2, or 3): ");
+                    int roomPrice = 0;
+                    int roomChoice;
+                    while (!int.TryParse(Console.ReadLine(), out roomChoice) || roomChoice < 1 || roomChoice > 3)
+                 {
+                    Console.WriteLine("Invalid input. Please enter 1, 2, or 3.");
+                    Console.Write("Enter your choice (1, 2, or 3): ");
+                 }
+                    if(roomChoice == 1){
+                    	
+                    	roomPrice = 500;
+                    }
+                    else if(roomChoice == 2){
+                    	      
+                    	roomPrice = 1000;
+                    }
+                    else if(roomChoice == 3){
+                    	      
+                    	roomPrice = 1500;
+       
+                    }       
+             
+                  string roomType = GetRoomType(roomChoice);
+
+    
+                    
+                        totalCost = numberOfDays * PRate1 * num2 + roomPrice;
+                    
+                      
+                      Console.WriteLine("Booking confirmed. ");
+                      Console.WriteLine("");
+                      
+                      Console.WriteLine("======================Pontefino Hotel Receipt===========================");
+                      Console.WriteLine("Name: " + Lname +" " + Fname + " " + Mname );
+                      Console.WriteLine("Address: " + Bar +"," + Cty + "," + Pro + "," + Pcode );
+                      Console.WriteLine("Email: " + Email );
+                      Console.WriteLine("Contact: " + num );
+                      Console.WriteLine("Check In: " + checkInDate );
+                      Console.WriteLine("Check Out: " + checkOutDate );	
+                      Console.WriteLine("Guest: " + num2 );
+                      Console.WriteLine("Total Days: "+ numberOfDays);
+                      Console.WriteLine("Room Rate per Day: "+PRate1);
+                      Console.WriteLine("Room Type: " + roomType);
+                      Console.WriteLine("========================================================================");
+                      Console.WriteLine("Total Cost: "+totalCost);
+                      Console.WriteLine("========================================================================");
+                      Console.WriteLine("Thank you for considering our services. Have a great day!");
+                }
+                
+}
+else if(hotels == 3){
+    Console.WriteLine("Meaco Royal Hotel-Batangas City");
+	Console.WriteLine("7 Evangelista St, Poblacion, Batangas, 4200 Batangas");  
+	Console.WriteLine("Unassuming hotel featuring a bar, a cafe & an outdoor pool, plus a restaurant & complimentary Wi-Fi. Free cancellation.");
+    Console.WriteLine("https://www.facebook.com/meacoroyalhotel/posts/meaco-royal-hotel-batangas-city-room-ratesfor-inquiries-and-reservation-please-c/1381733815293749/");      
+    Console.WriteLine(" ");
+    int PRate1= 1250;
+    Console.Write("Do you want to book in this hotel? (yes/no): ");
+                string bookHotel1 = Console.ReadLine();
+
+                if (bookHotel1.ToLower() == "yes")
+                {
+                   
+
+                    Console.Write("Enter the number of days you want to stay: ");
+                    int numberOfDays = Convert.ToInt32(Console.ReadLine());
+
+                   
+                    int totalCost = 0;
+                   
+                    Console.WriteLine("Select your room type:");
+                    Console.WriteLine("1. Standard Room");
+                    Console.WriteLine("2. Deluxe Room");
+                    Console.WriteLine("3. Suite");
+                    Console.Write("Enter your choice (1, 2, or 3): ");
+                    int roomPrice = 0;
+                    int roomChoice;
+                    while (!int.TryParse(Console.ReadLine(), out roomChoice) || roomChoice < 1 || roomChoice > 3)
+                 {
+                    Console.WriteLine("Invalid input. Please enter 1, 2, or 3.");
+                    Console.Write("Enter your choice (1, 2, or 3): ");
+                 }   
+        
+                    if(roomChoice == 1){
+                    	
+                    	roomPrice = 500;
+                    }
+                    else if(roomChoice == 2){
+                    	      
+                    	roomPrice = 1000;
+                    }
+                    else if(roomChoice == 3){
+                    	      
+                    	roomPrice = 1500;
+       
+                    }            
+             
+                  string roomType = GetRoomType(roomChoice);
+
+                    
+                        totalCost = numberOfDays * PRate1 * num2 + roomPrice;
+                        
+          
+                      Console.WriteLine("Booking confirmed. ");
+                      Console.WriteLine("");
+                      
+                      Console.WriteLine("==================Meaco Royal Hotel-Batangas City=======================");
+                      Console.WriteLine("Name: " + Lname +" " + Fname + " " + Mname );
+                      Console.WriteLine("Address: " + Bar +"," + Cty + "," + Pro + "," + Pcode );
+                      Console.WriteLine("Email: " + Email );
+                      Console.WriteLine("Contact: " + num );
+                      Console.WriteLine("Check In: " + checkInDate );
+                      Console.WriteLine("Check Out: " + checkOutDate );	
+                      Console.WriteLine("Guest: " + num2 );
+                      Console.WriteLine("Total Days: "+ numberOfDays);
+                      Console.WriteLine("Room Rate per Day: "+PRate1);
+                      Console.WriteLine("Room Type: " + roomType);
+                      Console.WriteLine("========================================================================");
+                      Console.WriteLine("Total Cost: "+totalCost);
+                      Console.WriteLine("========================================================================");
+                      Console.WriteLine("Thank you for considering our services. Have a great day!");
+                }
+               
+}
+else if(hotels == 4){
+	Console.WriteLine("Batangas Country Club");
+	Console.WriteLine("Bolbok Rd, Batangas, 4200 Batangas");  
+	Console.WriteLine("Parking and breakfast are free. Other amenities consist of 3 eateries and a bar, along with an outdoor pool,");
+	Console.WriteLine("a fitness room, and a spa offering a sauna and massage treatments.");   
+    Console.WriteLine("https://www.batangascountryclub.com/");  
+    Console.WriteLine(" ");    
+    int PRate1= 1000;
+    Console.Write("Do you want to book in this hotel? (yes/no): ");
+                string bookHotel1 = Console.ReadLine();
+
+                if (bookHotel1.ToLower() == "yes")
+                {
+                   
+
+                    Console.Write("Enter the number of days you want to stay: ");
+                    int numberOfDays = Convert.ToInt32(Console.ReadLine());
+
+                    
+
+                    int totalCost = 0;
+                     
+                    Console.WriteLine("Select your room type:");
+                    Console.WriteLine("1. Standard Room");
+                    Console.WriteLine("2. Deluxe Room");
+                    Console.WriteLine("3. Suite");
+                    Console.Write("Enter your choice (1, 2, or 3): ");
+                    int roomPrice = 0;
+                    int roomChoice;
+                    while (!int.TryParse(Console.ReadLine(), out roomChoice) || roomChoice < 1 || roomChoice > 3)
+                 {
+                    Console.WriteLine("Invalid input. Please enter 1, 2, or 3.");
+                    Console.Write("Enter your choice (1, 2, or 3): ");
+                 }
+                    if(roomChoice == 1){
+                    	
+                    	roomPrice = 500;
+                    }
+                    else if(roomChoice == 2){
+                    	      
+                    	roomPrice = 1000;
+                    }
+                    else if(roomChoice == 3){
+                    	      
+                    	roomPrice = 1500;
+       
+                    }
+                  string roomType = GetRoomType(roomChoice);
+
+                
+                    
+                        totalCost = numberOfDays * PRate1 * num2 + roomPrice;
+    
+                      Console.WriteLine("Booking confirmed. ");
+                      Console.WriteLine("");
+                      
+                      Console.WriteLine("=======================Batangas Country Club============================");
+                      Console.WriteLine("Name: " + Lname +" " + Fname + " " + Mname );
+                      Console.WriteLine("Address: " + Bar +"," + Cty + "," + Pro + "," + Pcode );
+                      Console.WriteLine("Email: " + Email );
+                      Console.WriteLine("Contact: " + num );
+                      Console.WriteLine("Check In: " + checkInDate );
+                      Console.WriteLine("Check Out: " + checkOutDate );	
+                      Console.WriteLine("Guest: " + num2 );
+                      Console.WriteLine("Total Days: "+ numberOfDays);
+                      Console.WriteLine("Room Rate per Day: "+PRate1);
+                      Console.WriteLine("Room Type: " + roomType);
+                      Console.WriteLine("========================================================================");
+                      Console.WriteLine("Total Cost: "+totalCost);
+                      Console.WriteLine("========================================================================");
+                      Console.WriteLine("Thank you for considering our services. Have a great day!");        
+                }
+                  
+}
+else if(hotels == 5){
+	Console.WriteLine("The Alpa Hotel");
+	Console.WriteLine("4200 Tolentino Rd, Batangas, 4201 Batangas");  
+	Console.WriteLine("The relaxed rooms are warmly decorated and come with TVs. They also feature en suite bathrooms.Amenities include");
+    Console.WriteLine("a low-key restaurant and an outdoor pool, plus a terrace and an airy lobby lounge. Breakfast is also available.");  
+	Console.WriteLine("https://www.facebook.com/TheAlpaHotelandRestaurant/");
+    Console.WriteLine(" ");
+    int PRate1= 1500;
+    Console.Write("Do you want to book in this hotel? (yes/no): ");
+                string bookHotel1 = Console.ReadLine();
+
+                if (bookHotel1.ToLower() == "yes")
+                {
+                   
+
+                    Console.Write("Enter the number of days you want to stay: ");
+                    int numberOfDays = Convert.ToInt32(Console.ReadLine());
+
+                    
+                    int totalCost = 0;
+
+                    Console.WriteLine("Select your room type:");
+                    Console.WriteLine("1. Standard Room");
+                    Console.WriteLine("2. Deluxe Room");
+                    Console.WriteLine("3. Suite");
+                    Console.Write("Enter your choice (1, 2, or 3): ");
+                    int roomPrice = 0;
+                    int roomChoice;
+                    while (!int.TryParse(Console.ReadLine(), out roomChoice) || roomChoice < 1 || roomChoice > 3)
+                 {
+                    Console.WriteLine("Invalid input. Please enter 1, 2, or 3.");
+                    Console.Write("Enter your choice (1, 2, or 3): ");
+                 }
+                    if(roomChoice == 1){
+                    	
+                    	roomPrice = 500;
+                    }
+                    else if(roomChoice == 2){
+                    	      
+                    	roomPrice = 1000;
+                    }
+                    else if(roomChoice == 3){
+                    	      
+                    	roomPrice = 1500;
+       
+                    }    
+                  string roomType = GetRoomType(roomChoice);
+
+                
+                    
+                        totalCost = numberOfDays * PRate1 * num2 + roomPrice;
+                    
+                  
+
+                      Console.WriteLine("Booking confirmed. ");
+                      Console.WriteLine("");
+                      
+                      Console.WriteLine("=========================The Alpa Hotel=================================");
+                      Console.WriteLine("Name: " + Lname +" " + Fname + " " + Mname );
+                      Console.WriteLine("Address: " + Bar +"," + Cty + "," + Pro + "," + Pcode );
+                      Console.WriteLine("Email: " + Email );
+                      Console.WriteLine("Contact: " + num );
+                      Console.WriteLine("Check In: " + checkInDate );
+                      Console.WriteLine("Check Out: " + checkOutDate );	
+                      Console.WriteLine("Guest: " + num2 );
+                      Console.WriteLine("Total Days: "+ numberOfDays);
+                      Console.WriteLine("Room Rate per Day: "+PRate1);
+                      Console.WriteLine("Room Type: " + roomType);
+                      Console.WriteLine("========================================================================");
+                      Console.WriteLine("Total Cost: "+totalCost);
+                      Console.WriteLine("========================================================================");
+                      Console.WriteLine("Thank you for considering our services. Have a great day!");
+                }
+                
+                
+}
+
+
+
+
+Console.WriteLine(" ");
+System.Threading.Thread.Sleep(1000);
+Console.WriteLine(" ");
+System.Threading.Thread.Sleep(1000);
+
+       }
+           else if (choices == 2){
+            	
+            	  Console.WriteLine("Laguna");
+            	  Console.WriteLine("Laguna is a province in the CALABARZON region of the Philippines, in which its name is derived from the Spanish word “lago,” meaning “lake.”");
+            	  Console.WriteLine("It is famous for being the birthplace of Jose Rizal, the Philippines’ national hero.");
+            	  Console.WriteLine("It was also one of the eight provinces to declare independence from Spain led by Generals Paciano Rizal of Calamba,");
+                  Console.WriteLine("Severino Taiño of Pagsanjan, Miguel Malvar of Batangas, and Agueda Kahabagan of Calauan during the 19th century. Moreover,");
+                  Console.WriteLine("Laguna de Bay — the Philippines’ largest lake, is almost completely encompassed by the Laguna province.");
+                  Console.WriteLine("The town of Bay served as the province’s capital until 1688, when it was moved to Pagsanjan and then, in 1852, to Sta. Cruz.");
+                  System.Threading.Thread.Sleep(2000);
+
+                Console.WriteLine(" ");
+                Console.WriteLine("These are tourist spots according to your choice");
+                Console.WriteLine(" ");
+                string[] black = {
+                    "1.Enchanted Kingdom",
+                    "2.Mount Makiling",
+                    "3.Seven Lakes of San Pablo",
+                    "4.Bahay ni Rizal",
+                    "5.Nagcarlan Underground Cementery "
+                };
+
+                int b = 0;
+                while (b < 5)
+                {
+                    Console.WriteLine(black[b]);
+                    System.Threading.Thread.Sleep(1000);
+                    b++;
+                }
+
+                System.Threading.Thread.Sleep(500);
+                Console.WriteLine("");
+                Console.Write("So, have you chosen your choice?: ");
+            
+
+
+int locations;
+locations = Convert.ToInt32(Console.ReadLine());
+
+if (locations == 1)
+{
+    Console.WriteLine("Enchanted Kingdom");	
+    Console.WriteLine("Enjoy unlimited rides inside this 25-hectare park that features eight themed zones with over 20 attractions.");
+    Console.WriteLine("These attractions range from interactive motion theaters to extreme rides such as Space Shuttle,");
+    Console.WriteLine("Anchor’s Away, Rio Grande Rapids, EKstreme Tower, Roller Skater, Fun Kart, Disk-O-Magic, Jungle Log Jam, and Air Race.");
+}
+else if (locations == 2)
+{
+	Console.WriteLine("Mount Makiling");
+    Console.WriteLine("The Mount Makiling Forest Reserve (MMFR) is an ASEAN Heritage Park that spans 4,244 hectares with straddling parts of Los Baños, Bay, and Calamba City");
+    Console.WriteLine("in Laguna. Its terrestrial ecosystem is under the University of the Philippines Los Baños and the Makiling Center for Mountain Ecosystems");
+}
+else if (locations == 3)
+{
+	Console.WriteLine("Seven Lakes of San Pablo");
+    Console.WriteLine("Apart from historical sites and resorts, Laguna is also home to the famed Seven Lakes of San Pablo,");
+    Console.WriteLine("namely Sampaloc, Bunot, Calibato, Pandin, Yambo, Palakpakin, and Mohicap.");
+    Console.WriteLine("These hidden wonders are nestled between Mt. Cristobal, Tayak Hill, Mt. Kalisungan, and Mt. Mabilog.");
+}
+else if (locations == 4)
+{
+	Console.WriteLine("Bahay ni Rizal");	
+	Console.WriteLine("Just a hundred meters away from Calamba’s town plaza, you can find the Museo ni Jose Rizal, also known as the Rizal Shrine in Calamba. ");
+    Console.WriteLine("This 2-story stone house is the replica of the birthplace of the Philippine national hero Jose Rizal.");
+    Console.WriteLine("Its structure is made of hardwood, bricks, and sliding windows with capiz shells. ");
+    Console.WriteLine("It is one of the must-visit historical tourist spots in the Philippines.");
+}
+else if (locations == 5)
+{
+	Console.WriteLine("Nagcarlan Underground Cementery");
+	Console.WriteLine("Another must-see attraction in Laguna is the Nagcarlan Underground Cemetery, which is situated inside a chapel.");
+    Console.WriteLine("It sits on a hilly terrain in the laid-back town of Nagcarlan in Barangay Bambang.");
+    Console.WriteLine("You can find the catacombs where the friars and wealthy people were laid to rest at the chapel's lower ground floor. ");
+}
+
+Console.WriteLine(" ");
+System.Threading.Thread.Sleep(1000);
+
+
+	Console.WriteLine(" ");
+	Console.WriteLine("Here is the list of hotels: ");
+    Console.WriteLine(" ");
+	string [] maroon = {
+                    "1.Casa Palmera Hotel",
+                    "2.Paseo Premiere Hotel",
+                    "3.Hotel Marciano",
+                    "4.Rizmy Apartment Hotel",
+                    "5.Green Glass Hotel"
+                    	
+    };
+    
+                int m = 0;
+                while (m < 5)
+                {
+                    Console.WriteLine(maroon[m]);
+                    System.Threading.Thread.Sleep(1000);
+                    m++;
+                }
+
+                System.Threading.Thread.Sleep(500);
+                Console.WriteLine("");
+                Console.Write("So, have you chosen your choice?: ");
+int hotels;
+hotels = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine(" ");
+
+if(hotels == 1){
+	Console.WriteLine("Casa Palmera Hotel");
+	Console.WriteLine("Purok 3 Brgy, Purok 3 Brgy, San Nicolas, San Pablo City, 4001 Laguna");  
+	Console.WriteLine("Casa Palmeras Hotel is a great choice for a stay in San Pablo.");
+	Console.WriteLine("Guests can grab a bite to eat at the restaurant and visit the fitness center for a workout.");
+	Console.WriteLine("Other features include an outdoor pool, a children's pool, and a garden.");
+    Console.WriteLine("https://ph.hotels.com/ho696044/casa-palmeras-hotel-san-pablo-philippines/?recommendations-overlay=recommendations-overlay");   
+    Console.WriteLine(" ");
+    int PRate1=2000;
+    Console.Write("Do you want to book in this hotel? (yes/no): ");
+                string bookHotel1 = Console.ReadLine();
+
+                if (bookHotel1.ToLower() == "yes")
+                {
+                    
+
+                    Console.Write("Enter the number of days you want to stay: ");
+                    int numberOfDays = Convert.ToInt32(Console.ReadLine());
+
+                   
+
+                    int totalCost = 0;
+
+                    Console.WriteLine("Select your room type:");
+                    Console.WriteLine("1. Standard Room");
+                    Console.WriteLine("2. Deluxe Room");
+                    Console.WriteLine("3. Suite");
+                    Console.Write("Enter your choice (1, 2, or 3): ");
+                    int roomPrice = 0;
+                    int roomChoice;
+                    while (!int.TryParse(Console.ReadLine(), out roomChoice) || roomChoice < 1 || roomChoice > 3)
+                 {
+                    Console.WriteLine("Invalid input. Please enter 1, 2, or 3.");
+                    Console.Write("Enter your choice (1, 2, or 3): ");
+                 }
+                    if(roomChoice == 1){
+                    	
+                    	roomPrice = 500;
+                    }
+                    else if(roomChoice == 2){
+                    	      
+                    	roomPrice = 1000;
+                    }
+                    else if(roomChoice == 3){
+                    	      
+                    	roomPrice = 1500;
+       
+                    }
+                  string roomType = GetRoomType(roomChoice);
+
+                        totalCost = numberOfDays * PRate1 * num2 + roomPrice;
+     
+                      
+                      Console.WriteLine("Booking confirmed. ");
+                      Console.WriteLine("");
+                      
+                      Console.WriteLine("=======================Casa Palmera Hotel================================");
+                      Console.WriteLine("Name: " + Lname +" " + Fname + " " + Mname );
+                      Console.WriteLine("Address: " + Bar +"," + Cty + "," + Pro + "," + Pcode );
+                      Console.WriteLine("Email: " + Email );
+                      Console.WriteLine("Contact: " + num );
+                      Console.WriteLine("Check In: " + checkInDate );
+                      Console.WriteLine("Check Out: " + checkOutDate );	
+                      Console.WriteLine("Guest: " + num2 );
+                      Console.WriteLine("Total Days: "+ numberOfDays);
+                      Console.WriteLine("Room Rate per Day: "+PRate1);
+                      Console.WriteLine("Room Type: " + roomType);
+                      Console.WriteLine("========================================================================");
+                      Console.WriteLine("Total Cost: "+totalCost);
+                      Console.WriteLine("========================================================================");
+                      Console.WriteLine("Thank you for considering our services. Have a great day!");
+                     
+                }
+                
+}
+else if(hotels == 2){
+    Console.WriteLine("Paseo Premiere Hotel");
+	Console.WriteLine("Santa Rosa Business Park, Greenfield City, Don Jose, Santa Rosa, Laguna");  
+	Console.WriteLine("Simple luxury , relaxing ambiance and personalized services, the Paseo Premiere Hotel provides guests with the cutting edge in design, cuisine and service.");
+    Console.WriteLine("https://paseopremierehotel.com");   
+    Console.WriteLine(" ");
+    int PRate1= 2200;
+    Console.Write("Do you want to book in this hotel? (yes/no): ");
+                string bookHotel1 = Console.ReadLine();
+
+                if (bookHotel1.ToLower() == "yes")
+                {
+                   
+
+                    Console.Write("Enter the number of days you want to stay: ");
+                    int numberOfDays = Convert.ToInt32(Console.ReadLine());
+
+                    
+
+                    int totalCost = 0;
+                    
+                    Console.WriteLine("Select your room type:");
+                    Console.WriteLine("1. Standard Room");
+                    Console.WriteLine("2. Deluxe Room");
+                    Console.WriteLine("3. Suite");
+                    Console.Write("Enter your choice (1, 2, or 3): ");
+                    int roomPrice = 0;
+                    int roomChoice;
+                    while (!int.TryParse(Console.ReadLine(), out roomChoice) || roomChoice < 1 || roomChoice > 3)
+                 {
+                    Console.WriteLine("Invalid input. Please enter 1, 2, or 3.");
+                    Console.Write("Enter your choice (1, 2, or 3): ");
+                 }
+                    if(roomChoice == 1){
+                    	
+                    	roomPrice = 500;
+                    }
+                    else if(roomChoice == 2){
+                    	      
+                    	roomPrice = 1000;
+                    }
+                    else if(roomChoice == 3){
+                    	      
+                    	roomPrice = 1500;
+       
+                    }
+                  string roomType = GetRoomType(roomChoice);
+         
+                    
+                        totalCost = numberOfDays * PRate1 * num2 + roomPrice;
+
+                      
+                      Console.WriteLine("Booking confirmed. ");
+                      Console.WriteLine("");
+                      
+                      Console.WriteLine("======================Paseo Premiere Hotel===============================");
+                      Console.WriteLine("Name: " + Lname +" " + Fname + " " + Mname );
+                      Console.WriteLine("Address: " + Bar +"," + Cty + "," + Pro + "," + Pcode );
+                      Console.WriteLine("Email: " + Email );
+                      Console.WriteLine("Contact: " + num );
+                      Console.WriteLine("Check In: " + checkInDate );
+                      Console.WriteLine("Check Out: " + checkOutDate );	
+                      Console.WriteLine("Guest: " + num2 );
+                      Console.WriteLine("Total Days: "+ numberOfDays);
+                      Console.WriteLine("Room Rate per Day: "+PRate1);
+                      Console.WriteLine("Room Type: " + roomType);
+                      Console.WriteLine("========================================================================");
+                      Console.WriteLine("Total Cost: "+totalCost);
+                      Console.WriteLine("========================================================================");
+                      Console.WriteLine("Thank you for considering our services. Have a great day!");
+                }
+                
+}
+else if(hotels == 3){
+    Console.WriteLine("Hotel Marciano");
+	Console.WriteLine("First PJM Compound, 335 Real Road, Km. 54 , Calamba, Laguna, Philippines, 4027");  
+	Console.WriteLine("Set off a busy shopping street, this relaxed hotel is a kilometer from the South Luzon Expressway,");
+	Console.WriteLine("4 km from the Jose Rizal Museum and 22 km from Mount Makiling.");
+    Console.WriteLine("https://hotelmarciano.com.ph");      
+    Console.WriteLine(" ");
+    int PRate1= 1800;
+    Console.Write("Do you want to book in this hotel? (yes/no): ");
+                string bookHotel1 = Console.ReadLine();
+
+                if (bookHotel1.ToLower() == "yes")
+                {
+                   
+
+                    Console.Write("Enter the number of days you want to stay: ");
+                    int numberOfDays = Convert.ToInt32(Console.ReadLine());
+
+                   
+                    int totalCost = 0;
+                   
+                    Console.WriteLine("Select your room type:");
+                    Console.WriteLine("1. Standard Room");
+                    Console.WriteLine("2. Deluxe Room");
+                    Console.WriteLine("3. Suite");
+                    Console.Write("Enter your choice (1, 2, or 3): ");
+                    int roomPrice = 0;
+                    int roomChoice;
+                    while (!int.TryParse(Console.ReadLine(), out roomChoice) || roomChoice < 1 || roomChoice > 3)
+                 {
+                    Console.WriteLine("Invalid input. Please enter 1, 2, or 3.");
+                    Console.Write("Enter your choice (1, 2, or 3): ");
+                 }
+                    if(roomChoice == 1){
+                    	
+                    	roomPrice = 500;
+                    }
+                    else if(roomChoice == 2){
+                    	      
+                    	roomPrice = 1000;
+                    }
+                    else if(roomChoice == 3){
+                    	      
+                    	roomPrice = 1500;
+       
+                    }
+                  string roomType = GetRoomType(roomChoice);
+
+                    
+                        totalCost = numberOfDays * PRate1 * num2 + roomPrice;
+ 
+                      Console.WriteLine("Booking confirmed. ");
+                      Console.WriteLine("");
+                      
+                      Console.WriteLine("=========================Hotel Marciano=================================");
+                      Console.WriteLine("Name: " + Lname +" " + Fname + " " + Mname );
+                      Console.WriteLine("Address: " + Bar +"," + Cty + "," + Pro + "," + Pcode );
+                      Console.WriteLine("Email: " + Email );
+                      Console.WriteLine("Contact: " + num );
+                      Console.WriteLine("Check In: " + checkInDate );
+                      Console.WriteLine("Check Out: " + checkOutDate );	
+                      Console.WriteLine("Guest: " + num2 );
+                      Console.WriteLine("Total Days: "+ numberOfDays);
+                      Console.WriteLine("Room Rate per Day: "+PRate1);
+                      Console.WriteLine("Room Type: " + roomType);
+                      Console.WriteLine("========================================================================");
+                      Console.WriteLine("Total Cost: "+totalCost);
+                      Console.WriteLine("========================================================================");
+                      Console.WriteLine("Thank you for considering our services. Have a great day!");
+                
+                 }
+               
+}
+else if(hotels == 4){
+	Console.WriteLine("Rizmy Apartment Hotel");
+	Console.WriteLine("3610 Pulo-Diezmo Road, Cabuyao, 4025 Laguna");  
+	Console.WriteLine("Off the AH26 highway, this unfussy, low-rise hotel is 10 km from Enchanted Kingdom");
+	Console.WriteLine("amusement park and 8 km from Rizal Shrine, dedicated to Philippine national hero");
+	Console.WriteLine("José Rizal. Streamlined rooms offer free Wi-Fi and flat-screen TVs. Upgraded rooms add bathtubs.");
+    Console.WriteLine("Children age 13 and under stay at no cost with an adult."); 	
+    Console.WriteLine("https://web.facebook.com/RizmyHotel/?_rdc=1&_rdr");  
+    Console.WriteLine(" ");    
+    int PRate1= 1800;
+    Console.Write("Do you want to book in this hotel? (yes/no): ");
+                string bookHotel1 = Console.ReadLine();
+
+                if (bookHotel1.ToLower() == "yes")
+                {
+                   
+
+                    Console.Write("Enter the number of days you want to stay: ");
+                    int numberOfDays = Convert.ToInt32(Console.ReadLine());
+
+                    int totalCost = 0;
+                     
+                    Console.WriteLine("Select your room type:");
+                    Console.WriteLine("1. Standard Room");
+                    Console.WriteLine("2. Deluxe Room");
+                    Console.WriteLine("3. Suite");
+                    Console.Write("Enter your choice (1, 2, or 3): ");
+                    int roomPrice = 0;
+                    int roomChoice;
+                    while (!int.TryParse(Console.ReadLine(), out roomChoice) || roomChoice < 1 || roomChoice > 3)
+                 {
+                    Console.WriteLine("Invalid input. Please enter 1, 2, or 3.");
+                    Console.Write("Enter your choice (1, 2, or 3): ");
+                 }
+                    if(roomChoice == 1){
+                    	
+                    	roomPrice = 500;
+                    }
+                    else if(roomChoice == 2){
+                    	      
+                    	roomPrice = 1000;
+                    }
+                    else if(roomChoice == 3){
+                    	      
+                    	roomPrice = 1500;
+       
+                    }
+                  string roomType = GetRoomType(roomChoice);
+
+                
+                    
+                        totalCost = numberOfDays * PRate1 * num2 + roomPrice;
+
+                      Console.WriteLine("Booking confirmed. ");
+                      Console.WriteLine("");
+                      
+                      Console.WriteLine("======================Rizmy Apartment Hotel=============================");
+                      Console.WriteLine("Name: " + Lname +" " + Fname + " " + Mname );
+                      Console.WriteLine("Address: " + Bar +"," + Cty + "," + Pro + "," + Pcode );
+                      Console.WriteLine("Email: " + Email );
+                      Console.WriteLine("Contact: " + num );
+                      Console.WriteLine("Check In: " + checkInDate );
+                      Console.WriteLine("Check Out: " + checkOutDate );	
+                      Console.WriteLine("Guest: " + num2 );
+                      Console.WriteLine("Total Days: "+ numberOfDays);
+                      Console.WriteLine("Room Rate per Day: "+PRate1);
+                      Console.WriteLine("Room Type: " + roomType);
+                      Console.WriteLine("========================================================================");
+                      Console.WriteLine("Total Cost: "+totalCost);
+                      Console.WriteLine("========================================================================");
+                      Console.WriteLine("Thank you for considering our services. Have a great day!");
+                }
+                                   
+}
+else if(hotels == 5){
+	Console.WriteLine("Green Glass Hotel");
+	Console.WriteLine("Crossing Calamba City, Calamba, Laguna, Philippines");  
+	Console.WriteLine("Take everything available in Laguna with a comfort stay at Green Glass Hotel.");
+	Console.WriteLine("If you seek a place with an easy access to dining options,you'll appreciate being only 11.1 km ");
+	Console.WriteLine("from Ipponyari Santa Rosa when staying at Green Glass Hotel. eGreen Glass Hotel offers impeccable service");
+	Console.WriteLine("and all the essential amenities to travelers. Never be out of touch with your contacts,");
+	Console.WriteLine("with free Wi-Fi offered throughout your stay. If you need a ride from or to the airport,");
+	Console.WriteLine("the hotel can arrange it before your check-in date. If you plan to arrive by car, you'll appreciate the hotel's available parking, right on-site.");
+    Console.WriteLine("http://www.greenglasshotel.com/"); 
+    Console.WriteLine(" ");
+    int PRate1= 1950;
+    Console.WriteLine("Do you want to book in this hotel? (yes/no): ");
+                string bookHotel1 = Console.ReadLine();
+
+                if (bookHotel1.ToLower() == "yes")
+                {
+                   
+
+                    Console.Write("Enter the number of days you want to stay: ");
+                    int numberOfDays = Convert.ToInt32(Console.ReadLine());
+
+                    
+                    int totalCost = 0;
+
+                    Console.WriteLine("Select your room type:");
+                    Console.WriteLine("1. Standard Room");
+                    Console.WriteLine("2. Deluxe Room");
+                    Console.WriteLine("3. Suite");
+                    Console.Write("Enter your choice (1, 2, or 3): ");
+                    int roomPrice = 0;
+                    int roomChoice;
+                    while (!int.TryParse(Console.ReadLine(), out roomChoice) || roomChoice < 1 || roomChoice > 3)
+                 {
+                    Console.WriteLine("Invalid input. Please enter 1, 2, or 3.");
+                    Console.Write("Enter your choice (1, 2, or 3): ");
+                 }
+             
+                    if(roomChoice == 1){
+                    	
+                    	roomPrice = 500;
+                    }
+                    else if(roomChoice == 2){
+                    	      
+                    	roomPrice = 1000;
+                    }
+                    else if(roomChoice == 3){
+                    	      
+                    	roomPrice = 1500;
+       
+                    }
+                  string roomType = GetRoomType(roomChoice);
+
+                
+                    
+                        totalCost = numberOfDays * PRate1 * num2 + roomPrice;
+					
+
+                      Console.WriteLine("Booking confirmed. ");
+                      Console.WriteLine("");
+                      
+                      Console.WriteLine("========================Green Glass Hotel===============================");
+                      Console.WriteLine("Name: " + Lname +" " + Fname + " " + Mname );
+                      Console.WriteLine("Address: " + Bar +"," + Cty + "," + Pro + "," + Pcode );
+                      Console.WriteLine("Email: " + Email );
+                      Console.WriteLine("Contact: " + num );
+                      Console.WriteLine("Check In: " + checkInDate );
+                      Console.WriteLine("Check Out: " + checkOutDate );	
+                      Console.WriteLine("Guest: " + num2 );
+                      Console.WriteLine("Total Days: "+ numberOfDays);
+                      Console.WriteLine("Room Rate per Day: "+PRate1);
+                      Console.WriteLine("Room Type: " + roomType);
+                      Console.WriteLine("========================================================================");
+                      Console.WriteLine("Total Cost: "+totalCost);
+                      Console.WriteLine("========================================================================");
+                      Console.WriteLine("Thank you for considering our services. Have a great day!");                
+                }
+                
+                
+}
+
+
+
+Console.WriteLine(" ");
+System.Threading.Thread.Sleep(1000);
+Console.WriteLine(" ");
+System.Threading.Thread.Sleep(1000);
+
+       }
+            
+            else if(choices == 3){
+           	
+            	Console.WriteLine("Cavite");
+                Console.WriteLine("The present location of Cavite City, formerly known as Tangway, played an essential part in trade with the settlements around Manila Bay, wherein it was");
+            	Console.WriteLine("considered the mooring place for Chinese junks In 1571, Spanish colonizers established the port in the said area.");
+            	Console.WriteLine("They also fortified the settlement as the first line of defense for the city of Manila. Ships were built and fitted at the port.");
+                Console.WriteLine("Many Chinese merchants settled in Bacoor and Kawit, which are opposite the Spanish town, to trade silks, porcelain, and other oriental goods.");
+                Console.WriteLine("The vibrant mix of traders, Spanish seamen, and residents gave rise to the use of pidgin Spanish called Chabacano.");
+                Console.WriteLine("However, Cavite labor, conscripted through polo or forced labor, bore the brunt of the burden in cutting and hauling timber from the mountains to the");
+                Console.WriteLine("shipyards at Cavite el Puerto. Thus, behind each galleon built that gave huge earnings to highly placed Spaniards ");
+                Console.WriteLine("in Manila was a tale of woes and sacrifices of Caviteños who welcomed the outbreak of the revolution.");
+                System.Threading.Thread.Sleep(2000);
+
+                Console.WriteLine(" ");
+                Console.WriteLine("These are tourist spots according to your choice");
+                Console.WriteLine(" ");
+                string[] black = {
+                    "1.Mt. Pico de Loro",
+                    "2.Corregidor Island",
+                    "3.Emilio Aguinaldo Shrine and Museum",
+                    "4.Museo De La Salle",
+                    "5.Patungan Beach Cove"
+                };
+
+                int b = 0;
+                while (b < 5)
+                {
+                    Console.WriteLine(black[b]);
+                    System.Threading.Thread.Sleep(1000);
+                    b++;
+                }
+
+                System.Threading.Thread.Sleep(500);
+                Console.WriteLine("");
+                Console.Write("So, have you chosen your choice?: ");
+            
+
+
+int locations;
+locations = Convert.ToInt32(Console.ReadLine());
+
+if (locations == 1)
+{
+	Console.WriteLine("Mt. Pico de Loro");
+    Console.WriteLine("Also known as Mt. Palay Palay, Mt. Pico de Loro stands majestically between Maragondon, Cavite, and Nasugbu, Batangas.");
+    Console.WriteLine("It is a dormant volcano that rises over 664m above sea level. It is one of the top hiking destinations in the Philippines.");
+    Console.WriteLine("The name “Pico de Loro” means parrot’s beak, which forms a resemblance to the mountain’s summit.");
+    Console.WriteLine("Its breathtaking summit offers an unobstructed view of the nearby provinces of Laguna and Batangas.");
+    Console.WriteLine("You can also witness the nearby scenic islands of Limbones, Corregidor, and Carabao.");
+}
+else if (locations == 2)
+{
+	Console.WriteLine("Corregidor Island");
+	Console.WriteLine("The island fortress of Corregidor is strategically located at the entrance of Manila Bay, south of Bataan,");
+    Console.WriteLine("but it’s under the territorial jurisdiction of Cavite. It's one of the best day tour destinations near Manila.");
+    Console.WriteLine("Corregidor Island (Fort Mills) is one of the harbor defenses and vital combat zones");
+    Console.WriteLine("between the Japanese Imperial Army and allied forces during World War II.");
+}
+else if (locations == 3)
+{
+	Console.WriteLine("Emilio Aguinaldo Shrine and Museum");
+    Console.WriteLine("One of the top historical tourist spots in Cavite is Emilio Aguinaldo Shrine and Museum,");
+    Console.WriteLine("the site of the first unfurling of the Philippine flag. Former president Emilio Aguinaldo officially proclaimed");
+    Console.WriteLine("the Philippine Independence from Spanish colonization on June 12, 1898, on the balcony of his home in Kawit, Cavite.");
+}
+else if (locations == 4)
+{
+	Console.WriteLine("Museo De La Salle");
+	Console.WriteLine("The province of Cavite is also home to various cultural and historical attractions. One of which is Museo De La Salle,");
+    Console.WriteLine("the official museum of the De La Salle University System in Dasmariñas, Cavite. It aims to showcase the extravagant lifestyle");
+    Console.WriteLine("of Ilustrados during the Spanish colonial period.");
+}
+else if (locations == 5)
+{
+	Console.WriteLine("Patungan Beach Cove");
+	Console.WriteLine("Another secluded and must-see beach spot in the province lies in Maragondon, Cavite.");
+    Console.WriteLine("Situated at the southern side of Mt. Palay Palay or Pico de Loro, Patungan Beach Cove rivals those");
+    Console.WriteLine("famous beaches in Batangas and Zambales. It boasts light brown sand, impressive rock formations, and breathtaking views of nearby islands. ");
+}
+
+Console.WriteLine(" ");
+System.Threading.Thread.Sleep(1000);
+
+
+	Console.WriteLine(" ");
+	Console.WriteLine("Here is the list of hotels: ");
+    Console.WriteLine(" ");
+	string [] maroon = {
+                    "1.Spring Plaza Hotel",
+                    "2.Microtel by Wyndham Eagle Ridge",
+                    "3.Brownwood Resort & Hotel",
+                    "4.Tanza Oasis Hotel and Resort",
+                    "5.The Lakeview Suites by Cocotel"
+                    	
+    };
+    
+                int m = 0;
+                while (m < 5)
+                {
+                    Console.WriteLine(maroon[m]);
+                    System.Threading.Thread.Sleep(1000);
+                    m++;
+                }
+
+                System.Threading.Thread.Sleep(500);
+                Console.WriteLine("");
+                Console.Write("So, have you chosen your choice?: ");
+int hotels;
+hotels = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine(" ");
+
+if(hotels == 1){
+	Console.WriteLine("Spring Plaza Hotel");
+	Console.WriteLine("Sampaloc 2, Bucal , Dasmariñas, Philippines");  
+	Console.WriteLine("On a side street off the R-2 road, this unassuming hotel is 3 km from Kidz World Amusement Park,");
+	Console.WriteLine("and 23 km from the trails and zipline at Tagaytay Picnic Grove.");
+    Console.WriteLine("https://web.facebook.com/springplazahotel/?_rdc=1&_rdr");   
+    Console.WriteLine(" ");
+    int PRate1=1300;
+    Console.WriteLine("Do you want to book in this hotel? (yes/no): ");
+                string bookHotel1 = Console.ReadLine();
+
+                if (bookHotel1.ToLower() == "yes")
+                {
+                    
+
+                    Console.Write("Enter the number of days you want to stay: ");
+                    int numberOfDays = Convert.ToInt32(Console.ReadLine());
+
+                    int totalCost = 0;
+
+                    Console.WriteLine("Select your room type:");
+                    Console.WriteLine("1. Standard Room");
+                    Console.WriteLine("2. Deluxe Room");
+                    Console.WriteLine("3. Suite");
+                    Console.Write("Enter your choice (1, 2, or 3): ");
+                    
+                    int roomChoice;
+                    int roomPrice = 0;
+                    while (!int.TryParse(Console.ReadLine(), out roomChoice) || roomChoice < 1 || roomChoice > 3)
+                 {
+                    Console.WriteLine("Invalid input. Please enter 1, 2, or 3.");
+                    Console.Write("Enter your choice (1, 2, or 3): ");
+                 }
+                    if(roomChoice == 1){
+                    	
+                    	roomPrice = 500;
+                    }
+                    else if(roomChoice == 2){
+                    	      
+                    	roomPrice = 1000;
+                    }
+                    else if(roomChoice == 3){
+                    	      
+                    	roomPrice = 1500;
+       
+                    }
+                  string roomType = GetRoomType(roomChoice);
+
+
+                    
+                       totalCost = numberOfDays * PRate1 * num2 + roomPrice;
+
+                      Console.WriteLine("Booking confirmed. ");
+                      Console.WriteLine("");
+                      
+                      Console.WriteLine("=======================Spring Plaza Hotel===============================");
+                      Console.WriteLine("Name: " + Lname +" " + Fname + " " + Mname );
+                      Console.WriteLine("Address: " + Bar +"," + Cty + "," + Pro + "," + Pcode );
+                      Console.WriteLine("Email: " + Email );
+                      Console.WriteLine("Contact: " + num );
+                      Console.WriteLine("Check In: " + checkInDate );
+                      Console.WriteLine("Check Out: " + checkOutDate );	
+                      Console.WriteLine("Guest: " + num2 );
+                      Console.WriteLine("Total Days: "+ numberOfDays);
+                      Console.WriteLine("Room Rate per Day: "+PRate1);
+                      Console.WriteLine("Room Type: " + roomType);
+                      Console.WriteLine("========================================================================");
+                      Console.WriteLine("Total Cost: "+totalCost);
+                      Console.WriteLine("========================================================================");
+                      Console.WriteLine("Thank you for considering our services. Have a great day!");      
+                     
+                }
+                
+}
+else if(hotels == 2){
+    Console.WriteLine("Microtel by Wyndham Eagle Ridge");
+	Console.WriteLine("Amadeo Road, General Trias, 4107");  
+	Console.WriteLine("Unfussy rooms in a relaxed hotel offering complimentary breakfast & Wi-Fi, plus event space.");
+    Console.WriteLine("https://www.wyndhamhotels.com/microtel/cavite-philippines/microtel-by-wyndham-eagle-ridge/overview");   
+    Console.WriteLine(" ");
+    int PRate1= 2100;
+    Console.WriteLine("Do you want to book in this hotel? (yes/no): ");
+                string bookHotel1 = Console.ReadLine();
+
+                if (bookHotel1.ToLower() == "yes")
+                {
+                   
+
+                    Console.Write("Enter the number of days you want to stay: ");
+                    int numberOfDays = Convert.ToInt32(Console.ReadLine());
+
+
+                    int totalCost = 0;
+                    
+                    Console.WriteLine("Select your room type:");
+                    Console.WriteLine("1. Standard Room");
+                    Console.WriteLine("2. Deluxe Room");
+                    Console.WriteLine("3. Suite");
+                    Console.Write("Enter your choice (1, 2, or 3): ");
+                    int roomPrice = 0;
+                    int roomChoice;
+                    while (!int.TryParse(Console.ReadLine(), out roomChoice) || roomChoice < 1 || roomChoice > 3)
+                 {
+                    Console.WriteLine("Invalid input. Please enter 1, 2, or 3.");
+                    Console.Write("Enter your choice (1, 2, or 3): ");
+                 }
+                    if(roomChoice == 1){
+                    	
+                    	roomPrice = 500;
+                    }
+                    else if(roomChoice == 2){
+                    	      
+                    	roomPrice = 1000;
+                    }
+                    else if(roomChoice == 3){
+                    	      
+                    	roomPrice = 1500;
+       
+                    }
+                  string roomType = GetRoomType(roomChoice);
+
+
+                        totalCost = numberOfDays * PRate1 * num2 + roomPrice;
+                    
+  
+                      Console.WriteLine("Booking confirmed. ");
+                      Console.WriteLine("");
+                      
+                      Console.WriteLine("=================Microtel by Wyndham Eagle Ridge========================");
+                      Console.WriteLine("Name: " + Lname +" " + Fname + " " + Mname );
+                      Console.WriteLine("Address: " + Bar +"," + Cty + "," + Pro + "," + Pcode );
+                      Console.WriteLine("Email: " + Email );
+                      Console.WriteLine("Contact: " + num );
+                      Console.WriteLine("Check In: " + checkInDate );
+                      Console.WriteLine("Check Out: " + checkOutDate );	
+                      Console.WriteLine("Guest: " + num2 );
+                      Console.WriteLine("Total Days: "+ numberOfDays);
+                      Console.WriteLine("Room Rate per Day: "+PRate1);
+                      Console.WriteLine("Room Type: " + roomType);
+                      Console.WriteLine("========================================================================");
+                      Console.WriteLine("Total Cost: "+totalCost);
+                      Console.WriteLine("========================================================================");
+                      Console.WriteLine("Thank you for considering our services. Have a great day!");      
+                     
+                
+                }
+                
+}
+else if(hotels == 3){
+    Console.WriteLine("Brownwood Resort & Hotel");
+	Console.WriteLine("Blk 1, Lot 2-3, Metro South Village, S Gate, General Trias, 4107 Cavite");  
+	Console.WriteLine("Brownwood Resort & Hotel provides amenities like dry cleaning/laundry services and a gym. Stay connected with free in-room WiFi.");
+    Console.WriteLine("https://web.facebook.com/BrownwoodResortandHotel/?_rdc=1&_rdr");      
+    Console.WriteLine(" ");
+    int PRate1= 2350;
+    Console.Write("Do you want to book in this hotel? (yes/no): ");
+                string bookHotel1 = Console.ReadLine();
+
+                if (bookHotel1.ToLower() == "yes")
+                {
+                   
+
+                    Console.Write("Enter the number of days you want to stay: ");
+                    int numberOfDays = Convert.ToInt32(Console.ReadLine());
+
+                   
+                    int totalCost = 0;
+                   
+                    Console.WriteLine("Select your room type:");
+                    Console.WriteLine("1. Standard Room");
+                    Console.WriteLine("2. Deluxe Room");
+                    Console.WriteLine("3. Suite");
+                    Console.Write("Enter your choice (1, 2, or 3): ");
+                    int roomPrice = 0;
+                    int roomChoice;
+                    while (!int.TryParse(Console.ReadLine(), out roomChoice) || roomChoice < 1 || roomChoice > 3)
+                 {
+                    Console.WriteLine("Invalid input. Please enter 1, 2, or 3.");
+                    Console.Write("Enter your choice (1, 2, or 3): ");
+                 }
+                    if(roomChoice == 1){
+                    	
+                    	roomPrice = 500;
+                    }
+                    else if(roomChoice == 2){
+                    	      
+                    	roomPrice = 1000;
+                    }
+                    else if(roomChoice == 3){
+                    	      
+                    	roomPrice = 1500;
+       
+                    }
+             
+                  string roomType = GetRoomType(roomChoice);
+
+                    
+                       totalCost = numberOfDays * PRate1 * num2 + roomPrice;
+ 
+                        
+                      Console.WriteLine("Booking confirmed. ");
+                      Console.WriteLine("");
+                      
+                      Console.WriteLine("=====================Brownwood Resort & Hotel===========================");
+                      Console.WriteLine("Name: " + Lname +" " + Fname + " " + Mname );
+                      Console.WriteLine("Address: " + Bar +"," + Cty + "," + Pro + "," + Pcode );
+                      Console.WriteLine("Email: " + Email );
+                      Console.WriteLine("Contact: " + num );
+                      Console.WriteLine("Check In: " + checkInDate );
+                      Console.WriteLine("Check Out: " + checkOutDate );	
+                      Console.WriteLine("Guest: " + num2 );
+                      Console.WriteLine("Total Days: "+ numberOfDays);
+                      Console.WriteLine("Room Rate per Day: "+PRate1);
+                      Console.WriteLine("Room Type: " + roomType);
+                      Console.WriteLine("========================================================================");
+                      Console.WriteLine("Total Cost: "+totalCost);
+                      Console.WriteLine("========================================================================");
+                      Console.WriteLine("Thank you for considering our services. Have a great day!");  
+                }
+               
+}
+else if(hotels == 4){
+	Console.WriteLine("Tanza Oasis Hotel and Resort");
+	Console.WriteLine("KM 41 Antero Soriano Hwy, Tanza, Cavite");  
+	Console.WriteLine("Set on the beach overlooking Manila Bay, this informal hotel is 7 km from");
+	Console.WriteLine("Casa Hacienda de Naic, a religious building dating from the 19th century.");    
+    Console.WriteLine("http://www.tanzaoasis.com");  
+    Console.WriteLine(" ");    
+    int PRate1=2900;
+    Console.WriteLine("Do you want to book in this hotel? (yes/no): ");
+                string bookHotel1 = Console.ReadLine();
+
+                if (bookHotel1.ToLower() == "yes")
+                {
+                   
+
+                    Console.Write("Enter the number of days you want to stay: ");
+                    int numberOfDays = Convert.ToInt32(Console.ReadLine());
+
+                    int totalCost = 0;
+                     
+                    Console.WriteLine("Select your room type:");
+                    Console.WriteLine("1. Standard Room");
+                    Console.WriteLine("2. Deluxe Room");
+                    Console.WriteLine("3. Suite");
+                    Console.Write("Enter your choice (1, 2, or 3): ");
+                    int roomPrice = 0;
+                    int roomChoice;
+                    while (!int.TryParse(Console.ReadLine(), out roomChoice) || roomChoice < 1 || roomChoice > 3)
+                 {
+                    Console.WriteLine("Invalid input. Please enter 1, 2, or 3.");
+                    Console.Write("Enter your choice (1, 2, or 3): ");
+                 }
+             
+
+                    if(roomChoice == 1){
+                    	
+                    	roomPrice = 500;
+                    }
+                    else if(roomChoice == 2){
+                    	      
+                    	roomPrice = 1000;
+                    }
+                    else if(roomChoice == 3){
+                    	      
+                    	roomPrice = 1500;
+       
+                    }
+                  string roomType = GetRoomType(roomChoice);
+           
+                    
+                        totalCost = numberOfDays * PRate1 * num2 + roomPrice;
+                    
+                        
+                      Console.WriteLine("Booking confirmed. ");
+                      Console.WriteLine("");
+                      
+                      Console.WriteLine("===================Tanza Oasis Hotel and Resort=========================");
+                      Console.WriteLine("Name: " + Lname +" " + Fname + " " + Mname );
+                      Console.WriteLine("Address: " + Bar +"," + Cty + "," + Pro + "," + Pcode );
+                      Console.WriteLine("Email: " + Email );
+                      Console.WriteLine("Contact: " + num );
+                      Console.WriteLine("Check In: " + checkInDate );
+                      Console.WriteLine("Check Out: " + checkOutDate );	
+                      Console.WriteLine("Guest: " + num2 );
+                      Console.WriteLine("Total Days: "+ numberOfDays);
+                      Console.WriteLine("Room Rate per Day: "+PRate1);
+                      Console.WriteLine("Room Type: " + roomType);
+                      Console.WriteLine("========================================================================");
+                      Console.WriteLine("Total Cost: "+totalCost);
+                      Console.WriteLine("========================================================================");
+                      Console.WriteLine("Thank you for considering our services. Have a great day!");  
+                      
+                }
+                  
+}
+else if(hotels == 5){
+	Console.WriteLine("The Lakeview Suites by Cocotel");
+	Console.WriteLine("5750 Lakeview Drive, Kaybagal South, Tagaytay, 4120 Cavite");  
+	Console.WriteLine("On a hillside with views of Lake Taal, this unassuming hotel in a log cabin-style building");
+    Console.WriteLine("is 2 km from the Sky Ranch Tagaytay amusement park and 5 km from the R-2 highway.");
+    Console.WriteLine("https://www.cocotel.com/ph/the-lakeview-suites-by-cocotel"); 
+    Console.WriteLine(" ");
+    int PRate1=2600;
+    Console.WriteLine("Do you want to book in this hotel? (yes/no): ");
+                string bookHotel1 = Console.ReadLine();
+
+                if (bookHotel1.ToLower() == "yes")
+                {
+                   
+
+                    Console.Write("Enter the number of days you want to stay: ");
+                    int numberOfDays = Convert.ToInt32(Console.ReadLine());
+
+                    
+                    int totalCost = 0;
+
+                    Console.WriteLine("Select your room type:");
+                    Console.WriteLine("1. Standard Room");
+                    Console.WriteLine("2. Deluxe Room");
+                    Console.WriteLine("3. Suite");
+                    Console.Write("Enter your choice (1, 2, or 3): ");
+                    int roomPrice = 0;
+                    int roomChoice;
+                    while (!int.TryParse(Console.ReadLine(), out roomChoice) || roomChoice < 1 || roomChoice > 3)
+                 {
+                    Console.WriteLine("Invalid input. Please enter 1, 2, or 3.");
+                    Console.Write("Enter your choice (1, 2, or 3): ");
+                 }
+                    if(roomChoice == 1){
+                    	
+                    	roomPrice = 500;
+                    }
+                    else if(roomChoice == 2){
+                    	      
+                    	roomPrice = 1000;
+                    }
+                    else if(roomChoice == 3){
+                    	      
+                    	roomPrice = 1500;
+       
+                    }
+                  string roomType = GetRoomType(roomChoice);
+
+                
+                    
+                        totalCost = numberOfDays * PRate1 * num2 + roomPrice;
+                    
+
+                      Console.WriteLine("Booking confirmed. ");
+                      Console.WriteLine("");
+                      
+                      Console.WriteLine("=================The Lakeview Suites by Cocotel=========================");
+                      Console.WriteLine("Name: " + Lname +" " + Fname + " " + Mname );
+                      Console.WriteLine("Address: " + Bar +"," + Cty + "," + Pro + "," + Pcode );
+                      Console.WriteLine("Email: " + Email );
+                      Console.WriteLine("Contact: " + num );
+                      Console.WriteLine("Check In: " + checkInDate );
+                      Console.WriteLine("Check Out: " + checkOutDate );	
+                      Console.WriteLine("Guest: " + num2 );
+                      Console.WriteLine("Total Days: "+ numberOfDays);
+                      Console.WriteLine("Room Rate per Day: "+PRate1);
+                      Console.WriteLine("Room Type: " + roomType);
+                      Console.WriteLine("========================================================================");
+                      Console.WriteLine("Total Cost: "+totalCost);
+                      Console.WriteLine("========================================================================");
+                      Console.WriteLine("Thank you for considering our services. Have a great day!");
+                }
+                
+                
+}
+
+
+Console.WriteLine(" ");
+System.Threading.Thread.Sleep(1000);
+Console.WriteLine(" ");
+System.Threading.Thread.Sleep(1000);            	
+           
+            }
+    
+            Console.WriteLine("--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("                                      "+"© 2023 WELCOME TO OUR SELECTED AREAS BOOKING PROGRAM. All rights reserved."+"                                                          ");
+            Console.WriteLine("--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+   
+			Console.ReadKey(true);
+            
+            }
+        
+        static string GetValidInput(string prompt)
+        {
+            Console.Write(prompt);
+            return Console.ReadLine();
+        }
+        static string GetValidEmail(string prompt)
+        {
+            Console.Write(prompt);
+            return Console.ReadLine();
+        }
+
+        static bool IsValidEmail(string email)
+        {
+        
+            string pattern = @"^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$";
+            return Regex.IsMatch(email, pattern);
+        }
+
+        
+        static string GetRoomType(int choice)
+        {
+            switch (choice)
+            {
+                case 1:
+            		return ("Standard Room");
+                case 2:
+            		return ("Deluxe Room");
+                case 3:
+            		return ("Suite");
+                default:
+            		return ("Unknown Room Type");
+            }
+            
+            
+            
+        	
+                           }
+                     }
+            
+  
+            }
+    
+   
+
+           
